@@ -47,12 +47,12 @@ for result in data:
     flag_word2vec = False
     flag_fasttext = False
 
-    if result_is_present(result["target"][0], result["results_baseline"][0:50]):
+    if result_is_present(result["target"][0], result["results_baseline"][0:200]):
         score_baseline += 1
         flag_baseline = True
         matrix[0][0] += 1
 
-    if result_is_present(result["target"][0], result["results_word2vec"][0:50]):
+    if result_is_present(result["target"][0], result["results_word2vec"][0:200]):
         score_word2vec += 1
         flag_word2vec = True
         if flag_baseline:
@@ -60,7 +60,7 @@ for result in data:
             matrix[1][0] += 1
         matrix[1][1] += 1
 
-    if result_is_present(result["target"][0], result["results_fasttext"][0:50]):
+    if result_is_present(result["target"][0], result["results_fasttext"][0:200]):
         score_fasttext += 1
         flag_fasttext = True
         if flag_baseline:

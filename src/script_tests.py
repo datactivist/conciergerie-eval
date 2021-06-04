@@ -1,3 +1,4 @@
+from numpy import save
 import requests
 import csv
 import json
@@ -110,11 +111,10 @@ with open("../data/processed/datasud_sl.csv", newline="") as csvfile:
 
     index = 0
 
-    with open("../results.json") as json_file:
-        save_experiment = json.load(json_file)
+    save_experiment = []
 
     for row in spamreader:
-        if index > 45:
+        if index > 0:
 
             print(row)
             results_baseline = request_Datasud(row[2], "")
