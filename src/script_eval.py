@@ -67,6 +67,8 @@ for result in data:
             matrix[0][2] += 1
             matrix[2][0] += 1
             if flag_word2vec:
+                matrix[1][2] += 1
+                matrix[2][1] += 1
                 globale += 1
         elif flag_word2vec:
             matrix[1][2] += 1
